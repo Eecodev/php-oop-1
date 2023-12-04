@@ -18,6 +18,12 @@ class Movie
         $this->original_language = $language;
     }
 
+    public function printCard()
+    {
+        $image = $this->poster_path;
+        $title = $this->title;
+        include __DIR__.'/../Views/card.php';
+    }
 }
 
 ?>
