@@ -33,6 +33,7 @@ class Movie
         $image = $this->poster_path;
         $title = $this->title;
         $content = substr($this->overview, 0, 100) . '...';
+        $custom = $this->getVote();
         include __DIR__.'/../Views/card.php';
     }
 }
