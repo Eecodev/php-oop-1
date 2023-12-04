@@ -30,4 +30,12 @@ class Movie
 $movieString = file_get_contents(__DIR__ .'/../Model/movie_db.json');
 $movieList = json_decode($movieString, true);
 
+//create empty array: this will be useful to collect instances of the 'Movie' class
+$movies = [];
+
+//looping through the movieList
+foreach($movieList as $movie) {
+    //appending the newly created Movie object to the $movies' array
+    $movies[] = new Movie($movie['id'], $movie['title'], $movie['overview'], $movie['vote_average'], $movie['poster_path'], $movie['original_language']);
+}
 ?>
