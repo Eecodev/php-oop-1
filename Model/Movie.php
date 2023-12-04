@@ -26,4 +26,8 @@ class Movie
     }
 }
 
+//retrieve the content of json file and decode the data into php associative array to further processing 
+$movieString = file_get_contents(__DIR__ .'/../Model/movie_db.json');
+$movieList = json_decode($movieString, true);
+
 ?>
