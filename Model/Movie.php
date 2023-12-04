@@ -8,7 +8,7 @@ class Movie
     private string $poster_path;
     private string $original_language;
 
-    function __construct($id, $title, $overview, $vote, $language, $image)
+    function __construct($id, $title, $overview, $vote, $image, $language)
     {
         $this->id = $id;
         $this->title = $title;
@@ -18,6 +18,16 @@ class Movie
         $this->original_language = $language;
     }
 
+    //generate rating based on vote average
+    public function getVote(){
+        $vote = ceil($this->vote_average / 2);
+        $template = "<p>";
+        for ($n = 1; $n <= 5; $n++){
+            $template .= $n <= $vote ? '<i class="fa-solid fa-star"></i>' : '<i class="fa-regular fa-star"></i>';
+        }
+        $template .= "</p>";
+        return $template;
+    }
     public function printCard()
     {
         $image = $this->poster_path;
