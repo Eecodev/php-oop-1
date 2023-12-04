@@ -9,7 +9,6 @@
                 <?= $content ?>
             </p>
             <div class="d-flex justify-content-between align-items-flex-start">
-                <?= $custom ?>
                 <div>
                 </div>
             </div>
